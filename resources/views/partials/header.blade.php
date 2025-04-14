@@ -4,7 +4,7 @@
   
       <!-- Logo -->
       <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-        <h1 class="sitename">Amrita Portfolio</h1>
+        <h1 class="sitename">Portfolio</h1>
       </a>
   
       <!-- Navigation Menu -->
