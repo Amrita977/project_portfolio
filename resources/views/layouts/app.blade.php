@@ -3,80 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Amrita Rajvansh | Portfolio')</title>
+    <title>@yield('title', 'Portfolio')</title>
+    
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    <meta name="description" content="@yield('meta_description', 'My personal portfolio site')">
-    <meta name="keywords" content="@yield('meta_keywords', 'Portfolio, Web Developer, Laravel, Python')">
+        .about-me {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    width: 50%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+.about-me h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
 
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins&family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+.about-me p {
+    font-size: 16px;
+    color: #666;
+}
 
-    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+.contact-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-    @yield('styles')
+.contact-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+        /* Navbar Styling */
+/* Navbar */
+.navbar {
+    background-color: #007bff;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffeb3b;
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    margin: 100px auto 30px;
+    width: 60%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.hero-section h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Project Card */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: white;
+    padding: 20px;
+    width: 45%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+
+    </style>
 </head>
-
-<body class="index-page">
-
-    @include('partials.header')
-
-
-    <main class="main">
-        @yield('content')
-    </main>
-
-    @include('partials.footer')
-
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-        <i class="bi bi-arrow-up-short"></i>
-    </a>
-
-    {{-- <div id="preloader"></div> --}}
-
-    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('assets/vendor/typed.js/typed.umd.js') }}"></script>
-    <script src="{{ asset('assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
-    <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          document.querySelectorAll('.faq-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function () {
-              const content = this.nextElementSibling;
-              const icon = this.querySelector('.toggle-icon');
-      
-              if (content.style.display === 'block') {
-                content.style.display = 'none';
-                icon.classList.remove('bi-chevron-up');
-                icon.classList.add('bi-chevron-down');
-              } else {
-                content.style.display = 'block';
-                icon.classList.remove('bi-chevron-down');
-                icon.classList.add('bi-chevron-up');
-              }
-            });
-          });
-        });
-      </script>
-      
-      
-      
-    @yield('scripts')
+<body>
+    
+    
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to My Portfolio</h1>
+        <p>My name is Amrita Rajvansh, As a fourth-year Computer Science and Engineering student with expertise in Python, 
+            MySQL, and web technologies, and practical experience from my industrial training at Sai Technologies, I am
+             eager to apply for the Python Developer position. My proficiency in Python development, knowledge of front-end
+              technologies,and focus on scalable, efficient solutions make me a strong candidate for contributing to your team.
+            </p>
+    </div>
+    
+    <!-- Projects Section -->
+    <div class="projects-container">
+        <div class="project-card">
+            <h2>My First Project</h2>
+            <p>This is a simple project.</p>
+            <a href="#" class="project-link">View Project</a>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
